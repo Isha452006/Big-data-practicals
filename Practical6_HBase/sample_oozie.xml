@@ -1,0 +1,19 @@
+$oozieWorkflow = @"
+<workflow-app name='sample-workflow' xmlns='uri:oozie:workflow:0.5'>
+    <start to='hive-node'/>
+    <action name='hive-node'>
+        <hive xmlns='uri:oozie:hive-action:0.5'>
+            <job-tracker>localhost:9001</job-tracker>
+            <name-node>hdfs://localhost:9000</name-node>
+            <script>sample_query.hql</script>
+        </hive>
+        <ok to='end'/>
+        <error to='fail'/>
+    </action>
+    <kill name='fail'>
+        <message>Workflow failed</message>
+    </kill>
+    <end name='end'/>
+</workflow-app>
+"@
+Set-Content -Path ".\Practical6_HBase_Zookeeper_Oozie\sample_oozie_workflow.xml" -Value $oozieWorkflow
