@@ -1,0 +1,2 @@
+Hello Hadoop HDFS!
+This is a sample file for Practical 1.
