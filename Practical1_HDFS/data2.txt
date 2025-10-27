@@ -1,1 +1,2 @@
 Sample data file 2 for HDFS practice.
+Used for verifying multiple file uploads in HDFS.

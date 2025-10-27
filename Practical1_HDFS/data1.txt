@@ -1,1 +1,2 @@
 Sample data file 1 for HDFS practice.
+HDFS file upload and retrieval testing.
